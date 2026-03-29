@@ -36,15 +36,29 @@ public class Tests
     public void UC2_Test()
     {
         var loginPage = new LoginPage(Browser);
-        var mainPage =loginPage.Login("standard_user", "secret_sauce");
+        
+        var mainPage = loginPage.Login("standard_user", "secret_sauce");
         
         Assert.Multiple(() =>
         {
-            Assert.IsTrue(mainPage.IsBurgerVisible(), "Бургер-меню не відображається");
-            Assert.IsTrue(mainPage.IsLabelVisible(), "Логотип 'Swag Labs' не відображається");
-            Assert.IsTrue(mainPage.IsCartIconVisible(), "Іконка кошика не відображається");
-            Assert.IsTrue(mainPage.IsSortDropdownVisible(), "Фільтр сортування не відображається");
-            Assert.IsTrue(mainPage.IsInventoryListVisible(), "Список товарів не відображається");
+            Assert.IsTrue(mainPage.IsBurgerVisible());
+            Assert.IsTrue(mainPage.IsLabelVisible());
+            Assert.IsTrue(mainPage.IsCartIconVisible());
+            Assert.IsTrue(mainPage.IsSortDropdownVisible());
+            Assert.IsTrue(mainPage.IsInventoryListVisible());
         });
+    }
+    
+    
+    [Test]
+    public void UC3_Test()
+    {
+        var loginPage = new LoginPage(Browser);
+        
+        var mainPage = loginPage.Login("standard_user", "secret_sauce");
+        var productPage = mainPage.OpenProductDetails();
+        productPage.AddToCart();
+        
+        Assert.IsTrue(productPage.IsCartBadgeDisplayed());
     }
 }
