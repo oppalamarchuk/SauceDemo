@@ -52,5 +52,13 @@ public partial class WebdriverWrapper
             wait.IgnoreExceptionTypes(typeof(NoSuchElementException));
 
             return wait.Until(ExpectedConditions.ElementIsVisible(by));
-        }    
+        }
+
+        public void ClearField(By by) 
+        {
+            var element = WaitForElementToBePresent(_driver, by, _timeout);
+            element.Click();
+            element.SendKeys(Keys.Control + "a");
+            element.SendKeys(Keys.Backspace);
+        }
     }

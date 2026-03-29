@@ -22,14 +22,18 @@ public class Tests
     {
         Browser.Close();
     }
+    
     [Test]
     public void UC1_Test()
     {
         var loginPage = new LoginPage(Browser);
         
-        loginPage.Login("any", "any");
+        loginPage.EnterLoginPassword("standard_user", "a");
+        loginPage.ClearPasswordField();
+        loginPage.ClickLoginButton();
         
-        Assert.IsTrue(loginPage.IsErrorVisible());
+        var errorMessage = loginPage.GetErrorMessage();
+        Assert.That(errorMessage, Does.Contain("Password is required"));
     }
 
     [Test]
