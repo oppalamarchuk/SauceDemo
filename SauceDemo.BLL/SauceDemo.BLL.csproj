@@ -7,10 +7,6 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="PageObjects\" />
-    </ItemGroup>
-
-    <ItemGroup>
       <ProjectReference Include="..\SauceDemo\SauceDemo.csproj" />
     </ItemGroup>
 
