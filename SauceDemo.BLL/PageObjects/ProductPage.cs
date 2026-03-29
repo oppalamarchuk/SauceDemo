@@ -11,7 +11,7 @@ public class ProductPage(WebdriverWrapper driver)
 
     public void AddToCart()
     {
-        driver.FindElement(AddToCartLocator).Click();
+        driver.Click(AddToCartLocator);
     }
 
     public bool IsCartBadgeDisplayed() => driver.FindElement(CartBadgeLocator).Displayed;

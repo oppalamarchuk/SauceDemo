@@ -18,7 +18,7 @@ public class DriverFactory
                 throw new ArgumentOutOfRangeException(
                     nameof(browserType),
                     browserType,
-                    "No such browser type supported");
+                    "No such browser supported");
         }
     }
 }

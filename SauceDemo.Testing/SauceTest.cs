@@ -1,5 +1,4 @@
 ﻿using SauceDemo.BLL.PageObjects;
-using SauceDemo.WebDriver;
 using SauceDemo.WebDriver.WebdriverWrapper;
 
 namespace SauceDemo.Testing;
