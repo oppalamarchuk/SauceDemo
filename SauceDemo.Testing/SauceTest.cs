@@ -46,7 +46,7 @@ public class Tests
         Assert.Multiple(() =>
         {
             Assert.IsTrue(mainPage.IsBurgerVisible());
-            Assert.IsTrue(mainPage.IsLabelVisible());
+            Assert.IsTrue(mainPage.IsSwagLabelVisible());
             Assert.IsTrue(mainPage.IsCartIconVisible());
             Assert.IsTrue(mainPage.IsSortDropdownVisible());
             Assert.IsTrue(mainPage.IsInventoryListVisible());

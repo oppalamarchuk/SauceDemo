@@ -14,7 +14,7 @@ public class MainPage(WebdriverWrapper driver)
     
     public bool IsBurgerVisible() => driver.FindElement(BurgerButtonLocator).Displayed;
     
-    public bool IsLabelVisible() => driver.FindElement(SwagLabelLocator).Displayed;
+    public bool IsSwagLabelVisible() => driver.FindElement(SwagLabelLocator).Displayed;
 
     public bool IsCartIconVisible() => driver.FindElement(CartIconLocator).Displayed;
 
