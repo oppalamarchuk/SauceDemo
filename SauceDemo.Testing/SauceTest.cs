@@ -1,4 +1,5 @@
-﻿using SauceDemo.BLL.PageObjects;
+﻿using FluentAssertions;
+using SauceDemo.BLL.PageObjects;
 using SauceDemo.WebDriver.WebdriverWrapper;
 
 namespace SauceDemo.Testing;
@@ -32,7 +33,7 @@ public class Tests
         loginPage.ClickLoginButton();
         
         var errorMessage = loginPage.GetErrorMessage();
-        Assert.That(errorMessage, Does.Contain("Password is required"));
+        errorMessage.Should().Contain("Password is required");
     }
 
     [Test]
@@ -42,14 +43,11 @@ public class Tests
         
         var mainPage = loginPage.Login("standard_user", "secret_sauce");
         
-        Assert.Multiple(() =>
-        {
-            Assert.IsTrue(mainPage.IsBurgerVisible());
-            Assert.IsTrue(mainPage.IsSwagLabelVisible());
-            Assert.IsTrue(mainPage.IsCartIconVisible());
-            Assert.IsTrue(mainPage.IsSortDropdownVisible());
-            Assert.IsTrue(mainPage.IsInventoryListVisible());
-        });
+        mainPage.IsBurgerVisible().Should().BeTrue();
+        mainPage.IsSwagLabelVisible().Should().BeTrue();
+        mainPage.IsCartIconVisible().Should().BeTrue();
+        mainPage.IsSortDropdownVisible().Should().BeTrue();
+        mainPage.IsInventoryListVisible().Should().BeTrue();
     }
     
     
@@ -62,6 +60,6 @@ public class Tests
         var productPage = mainPage.OpenProductDetails();
         productPage.AddToCart();
         
-        Assert.IsTrue(productPage.IsCartBadgeDisplayed());
+       productPage.IsCartBadgeDisplayed().Should().BeTrue();
     }
 }
