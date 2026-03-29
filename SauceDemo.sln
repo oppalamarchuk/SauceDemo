@@ -4,6 +4,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SauceDemo", "SauceDemo\Sauc
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SauceDemo.Testing", "SauceDemo.Testing\SauceDemo.Testing.csproj", "{28C607C1-C56A-46E7-B4E4-07A6372BCA46}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SauceDemo.BLL", "SauceDemo.BLL\SauceDemo.BLL.csproj", "{BB7CFE08-50F7-460E-9F41-22847B9A6B98}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{28C607C1-C56A-46E7-B4E4-07A6372BCA46}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{28C607C1-C56A-46E7-B4E4-07A6372BCA46}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{28C607C1-C56A-46E7-B4E4-07A6372BCA46}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB7CFE08-50F7-460E-9F41-22847B9A6B98}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB7CFE08-50F7-460E-9F41-22847B9A6B98}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB7CFE08-50F7-460E-9F41-22847B9A6B98}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB7CFE08-50F7-460E-9F41-22847B9A6B98}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
