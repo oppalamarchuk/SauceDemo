@@ -10,13 +10,9 @@ public class LoginPage(WebdriverWrapper driver)
     private readonly By LoginButtonLocator = By.CssSelector("[data-test='login-button']");
     private readonly By ErrorMessageLocator = By.CssSelector("[data-test='error']");
 
-    public bool IsErrorVisible()
-    {
-        var element = driver.FindElement(ErrorMessageLocator);
-        return element.Displayed;
-    }
+    public bool IsErrorVisible() => driver.FindElement(ErrorMessageLocator).Displayed;
     
-    public MainPage Login(string password, string login)
+    public MainPage Login(string login, string password)
     {
         driver.EnterText(userNameLocator, login);
         driver.EnterText(passwordLocator, password);
